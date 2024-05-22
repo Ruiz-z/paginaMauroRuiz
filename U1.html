@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="paginas/style.css">
+    <title>Unidad 1</title>
+</head>
+<body>
+
+    <header>
+        <img src="" alt="" class="logo">
+
+        <ul class="menu-container">
+            <a href="index.html" class="a"><li class="menu-item">Inicio</li></a>
+           <a href="U2.html" class="a"><li class="menu-item">Unidad 2</li></a>
+            <li class="menu-item">Practicas</li>
+            <li class="menu-item">Indice</li>
+        </ul>
+    </header>
+
+    <div class="image-container">
+        <h1 class="page-title">Unidad 1</h1>
+    </div>
+    <div class="contenido">
+        <h2 class="subtitulo" id="1.1 Modelos de arquitectura de computo.">1.1 Modelos de arquitectura de computo.</h2>
+        <p class="post">
+            Un modelo de arquitectura de cómputo es una representación conceptual de cómo está organizado y diseñado un
+            sistema informático. Este modelo describe la estructura, los componentes y las interacciones entre ellos
+            dentro del sistema. Estos modelos son utilizados por los diseñadores de hardware y software para entender,
+            diseñar y desarrollar sistemas informáticos eficientes y funcionales. <br></p>
+    </div>
+
+    <div class="contenido">
+        <h2 class="subtitulo" id=" 1.1.1 Clásicas"> 1.1.1 Clásicas</h2>
+        <p class="post">
+            Fueron desarrolladas en las
+            primeras computadoras
+            electromecánicas y de tubos de
+            vacío. Aún se usan en procesadores
+            empotrados de gama baja y son la
+            base de la mayoría de arquitecturas
+            modernas.</p>
+        <img src="https://i.postimg.cc/qv52p0Hk/c1-1.jpg"class="imagen">
+    </div>
+    <div class="contenido">
+        <h2 class="subtitulo"><ul><li>Arquitectura Mauchly-Eckert(Von Newman)</li></ul></h2>
+        <p class="post">
+            Usada en la computadora <b>ENIAC.</b><br>
+            Consiste en una unidad central de proceso que se comunica a través de un solo bus con un banco de memoria
+            donde se almacenan los códigos de instrucción del programa y los datos que procesará. <br>
+            Esta arquitectura es la que más se emplea en la ctualidad ya que, es muy versátil. 
+            Un ejemplo de esta versatilidad es el funcionamiento de los compiladores. <br>
+
+            Su <b>desventaja</b> es que el bus de datos y direcciones único se convierte en un cuello
+            de botella por el que pasa toda la información que se lee o escribe a la memoria, obligando que
+            los accesos a esta sean secuenciales. Limita el grado de paralelismo.
+
+            En lugar de tener instrucciones cableadas directamente en la CPU, se asigna un código numérico (conocido como código de operación) a cada instrucción.
+            Estos códigos se almacenan en la misma memoria que los datos a procesar. 
+            De esta manera, tanto los programas como los datos se encuentran en la misma unidad de memoria,
+             lo que facilita la programación y la flexibilidad en el diseño de software.
+
+            En la arquitectura Von Neumann, <b>el procesador se divide en tres componentes principales:</b>
+<ul>
+            <li><b> Unidad de Control (C.U.):</b> Es responsable de buscar instrucciones desde la memoria, decodificarlas y coordinar las operaciones de la CPU.</li>
+             <li><b>Unidad Lógica Aritmética (A.L.U.):</b> Realiza operaciones matemáticas y lógicas, como sumas, restas, multiplicaciones y comparaciones.</li>
+             <li><b>Serie de Registros:</b> Estos registros almacenan datos temporales y direcciones de memoria utilizadas durante la ejecución de instrucciones.</li>
+</ul>
+            </p>
+        <img src="https://i.postimg.cc/KzykY8qy/c2.jpg"class="imagen">
+    </div>
+
+    <div class="contenido">
+        <h2 class="subtitulo" id=" 1.1.1 Clásicas">1.1.2 Segmentadas</h2>
+        <p class="post">
+            Buscan mejorar el desempeño
+            realizando paralelamente varias
+            etapas del ciclo de instrucción a
+            mismo tiempo. El procesador se
+            divide en varias unidades
+            funcionales independientes y se
+            dividen entre ellas el procesamiento
+            de las instrucciones.</p>
+        <img src="https://i.postimg.cc/QCfHSkXX/c4.jpg"class="imagen">
+        <p class="post">
+            Para comprenderlo. Supongamos que un procesador simple tiene un ciclo de instrucción
+            sencillo consistente, solamente en una etapa de búsqueda del código de instrucción y en
+            otra etapa de ejecución de la instrucción. En un procesador sin segmentación del cauce,
+            las dos etapas se realizarían de manera secuencial para cada una de las instrucciones. <br>
+            <br>
+            Como se muestra en la siguiente figura:</p>
+            <img src="https://i.postimg.cc/TYPy1S9h/c5.jpg"class="imagen">
+            <p class="post">
+                En un procesador con segmentación del cause, cada una de estas etapas se asigna a una
+                unidad funcional diferente, la búsqueda a la unidad de búsqueda y la ejecución a la unidad
+                de ejecución. Las unidades pueden trabajar en forma paralela en instrucciones diferentes y se
+                comunican por medio de una cola de instrucciones en la que la unidad de búsqueda coloca los
+                códigos de instrucción que leyó para que la unidad de ejecución los tome de la cola y los
+                ejecute.</p>
+                <img src="https://i.postimg.cc/P5pPzw0j/c6.jpg"class="imagen">
+                <p class="post">
+                    Esta cola parece un tubo: las instrucciones entran por un extremo y salen por el otro. De ahí
+                    proviene el nombre Pipelining o entubamiento. <br><br>
+
+                    En un procesador con segmentación, la unidad de búsqueda comenzaría buscando el código
+                    de la primera instrucción en el primer ciclo de reloj. Durante el segundo ciclo del reloj, la
+                    unidad de búsqueda obtendría el código de la instrucción 2, mientras que la unidad de
+                    ejecución ejecuta la instrucción 1 y así sucesivamente.
+                </p>
+                    <img src="https://i.postimg.cc/YSQ0TwpD/c7.jpg"class="imagen">
+    </div>
+    <div class="contenido">
+        <h2 class="subtitulo" id="1.3.De multiprocesamiento">1.3.De multiprocesamiento</h2>
+        <p class="post">
+            Cuando se desea incrementar el
+            desempeño más allá de lo que
+            permite la técnica de segmentación
+            del cauce, se requiere utilizar más
+            de un procesador para la ejecución
+            del programa de aplicación. <br>
+        
+            Las CPU de
+            multiprocesamiento se
+            clasifican de la siguiente
+            manera (Clasificación de
+            Flynn)
+            <ul class="ul">
+            <li>SISO - (Single Instruction, Single Operand)
+            Computadoras Monoprocesador. <br></li>
+            <li>SIMO - (Single Instruction, Multiple Operand)
+            <li>Procesadores vectoriales, Exenciones MMX  <br></li>
+            <li>MISO - (Multiple Instruction, Single Operand) No
+            implementado  <br></li>
+            <li>MIMO - (Multiple Instruction, Multiple Operand)
+            Sistemas SMP, Clusters, GPUs  <br></li>
+            </ul>
+        </p>
+    </div>
+    <div class="contenido">
+        <h2 class="subtitulo" ><b>Procesadores vectoriales</b></h2>
+        <p class="post">
+            son una clase de procesadores diseñados para realizar operaciones en paralelo en grandes conjuntos de datos. 
+            Utilizan instrucciones SIMD (Single Instruction, Multiple Data) para aplicar una operación a múltiples elementos de datos simultáneamente. 
+            Aunque la mayoría de las computadoras modernas utilizan la arquitectura Von Neumann, la Harvard sigue siendo relevante en aplicaciones específicas. 
+            En la actualidad, los procesadores modernos incluyen varios niveles de memoria caché con bancos separados para caché de programa y caché de datos, 
+            buscando un mejor desempeño sin perder la versatilidad.
+        <img src="imagenes/Procesadores-Vectoriales.jpg"class="imagen">
+        </p>
+    </div>
+
+    <div class="contenido">
+        <h2 class="subtitulo"><b>Procesadores Digitales de señales (DSP)</b></h2>
+        <p class="post">
+            es un sistema basado en un procesador o microprocesador que está optimizado para aplicaciones
+             que requieren operaciones numéricas a muy alta velocidad. 
+             Estos procesadores se utilizan especialmente para el procesamiento de señales y la representación de señales analógicas
+              en tiempo real. 
+              Funcionan con muestras digitales provenientes de un conversor analógico/digital (ADC) 
+              y se destacan por su capacidad para trabajar
+             con varios datos en paralelo y ejecutar instrucciones específicas para el procesado digital.
+        </p>
+    </div>
+
+    <div class="contenido">
+        <h2 class="subtitulo"><b>Sistemas SMP (Symetric Multiprocesesors)</b></h2>
+        <p class="post">
+            Varios procesadores comparten la misma memoria principal y periféricos I/O. Normalmente
+            conectados por un bus común. Son simétricos ya que todos tienen derechos similares en
+            cuanto al acceso a la memoria y periféricos y ambos son administrados por el Sistema
+            Operativo
+        </p><img src="imagenes/SMP.png"class="imagen">
+
+    </div>
+
+    <div class="contenido">
+        <h2 class="subtitulo"><b>Clusters</b></h2>
+        <p class="post">
+            Son conjuntos de computadoras independientes conectadas en una LAN o por un bus de
+            interconexión y que trabajan cooperativamente para resolver un problema. Es clave en su
+            funcionamiento contar con un Sistema Operativo y programas de aplicación capaces de
+            distribuir el trabajo entre las
+            computadoras de red.
+        </p><img src="https://i.postimg.cc/cLDsVLqc/c8.jpg"class="imagen">
+    </div>
+    <div class="contenido">
+        <h2 class="subtitulo"><b> GPU</b></h2>
+        <p class="post">
+            Diseñados originalmente para el
+            procesamiento de Gráficos, con
+            múltiples procesadores
+            vectoriales sencillos,
+            compoartiendo la misma
+            memoria, la cual puede ser
+            accedida por el CPU.
+    </div>
+
+    <div class="contenido">
+        <h2 class="subtitulo" id="1.2 Análisis de Componentes.">1.2 Análisis de Componentes. <br><br></h2>
+        <h2 class="subtitulo" id="1.2.1 Arquitecturas.">1.2.1 Arquitecturas.</h2>
+        <p class="post">
+            Además de las Arquitecturas clásicas
+            mencionadas anteriormente, en la
+            actualidad han aparecido Arquitecturas
+            híbridas entre la Von Newman y la
+            Harvard, buscando conservar la
+            flexibilidad, pero mejorando el
+            rendimiento. <br></p>
+        <img src="https://i.postimg.cc/XYybDc8n/c10.webp"class="imagen">
+    </div>
+    <div class="contenido">
+        <h2 class="subtitulo" id="1.2 Análisis de Componentes."><ul><li>CISC</li></ul></h2>
+        <p class="post">
+            CISC es un tipo de arquitectura de computadoras que promueve
+            el uso de gran número de instrucciones, permitiendo
+            operaciones complejas entre operandos situados en memoria o
+            en registros internos.
+            <br></p>
+        <img src="imagenes/C11.png"class="imagen">
+    </div>
+
+    <div class="contenido">
+        <h2 class="subtitulo" id="1.2 Análisis de Componentes."><ul><li>RISC</li></ul></h2>
+        <p class="post">
+            conjunto de instrucciones reducidas (Reduced Instruction Set
+            Computer) son procesadores que están diseñados para
+            ejecutar un número reducido de tipos de instrucciones que les
+            permite operar a una velocidad más elevada. La arquitectura
+            RISC principalmente requiere menos cantidad de hardware y
+            una mayor flexibilidad de construcción.
+            <br></p>
+        <img src="imagenes/C12.png"class="imagen">
+    </div>
+    <div class="contenido">
+        <h2 class="subtitulo" id="1.2.1 Unidad Central de Procesamiento (CPU)">1.2.1 Unidad Central de Procesamiento (CPU) <br><br></h2>
+        <h2 class="subtitulo">CPU</h2>
+        <p class="post">
+            Es el cerebro de cada ordenador
+            Componente vital conocido como procesador
+            Se encarga de procesar todas las instrucciones del
+            dispositivo. <br>
+            Cuanto mas potente sea, mas rapido podra hacer las
+            operaciones.
+            Ordenador tiene CPU y el telefono tiene SoC, estos
+            suelen poder hacer mas que el CPU estandar
+            <br> 
+            Suele ser pequeño y de forma cuadrada, va instalado
+            en la placa madre del ordenador
+            Al tener varios nucleos, es capaz de realizar mas
+            operaciones a la vez, pero tambien depende de
+            como sean sus nucleos. <br>
+            Los hilos (threads) son las secuencias de
+            instrucciones pertenecientes al SO
+            Su frecuencia se mide en gigahz(1.000.000.000) y
+            marca el ritmo con el que trabaja el procesador.
+            <br>
+            <img src="imagenes/C12.jpg"class="imagen">
+            <br><br><br>
+           <b> ¿Para que y como sirve el CPU?</b><br>
+
+            Ejecuta una secuencia de instrucciones y procesa los
+            datos de las mismas.
+            Se encarga de leer datos e instrucciones para realizar
+            cada una de las tareas (decodifica los datos y los
+            divide).
+            Las instrucciones no se realizan en orden una tras
+            otra, el CPU trabaja con varias a la vez.
+            <br><br><br>
+            <b>Componentes del CPU</b><br>
+            <b>Unidad de control:</b> Gestiona el procesamiento de instrucciones. <br>
+            <b>Registros:</b> Ubicaciones de almacenamiento de memoria de alta
+            velocidad dentro del CPU.
+            <b>ALU:</b> Realiza operaciones aritmeticas basicas. <br>
+            <b>Unidad de gestion de memoria: </b> Bus, gestionan las tareas 
+            relacionadas con la memoria, interaccion de CPU y RAM <br>
+            <b>Reloj:</b> Se basa en una senal para sincronizar sus operaciones
+            internas (lo coordina). <br>
+            Nucleo: Interpreta y ejecuta acciones. <br>
+            <b>Memoria cache:</b> Almacena los datos que el usuario busca con
+            frecuencia <br><br>
+
+            <img src="https://i.postimg.cc/Z59w8wLx/cpu.webp"class="imagen">
+        </p>
+    </div>
+    
+    <div class="contenido">
+        <h2 class="subtitulo" id="1.2.1.2 Unidad Aritmética lógica">1.2.1.2 Unidad Aritmética Lógica</h2>
+        <p class="post">
+            <b>¿Que es la unidad aritmetica logica?</b> <br>
+            Es un circuito digital que realiza operaciones lógicas
+            y aritméticas entre dos operados den bits <br><br>
+
+            <b>Estructura de una computadora digital</b>
+            En una computadora digital, la unidad aritmético lógica se
+            localiza en la CPU (Unidad Central de Proceso) 
+            y realiza operaciones con los datos que provienen de la memoria o de dispositivos externos
+            <br>
+            <img src="imagenes/c14.jpeg"class="imagen"> <br>
+        </p>
+    </div>
+   
+    <div class="contenido">
+        <h2 class="subtitulo" id=" 1.2.1.3 Registros"> 1.2.1.3 Registros</h2>
+        <p class="post">
+            <b>¿Qué son los registros?</b> <br>
+            Un registro es una memoria que esta ubicada en el procesador y se
+            encuentra en el nivel más alto en la jerarquía de memoria, por lo tanto
+            tiene una alta velocidad pero con poca capacidad para almacenar
+            datos que va desde los 4 bits hasta los 64 bits dependiendo del
+            procesador que se utilice. Los datos que almacena son los que se usan
+            frecuentemente <br><br>
+
+            El número de registros del CPU es limitado, ya que
+            las compuertas lógicas del circuito integrado se emplean para implementar
+            las secuencias de control de estas instrucciones
+            especiales.
+            <br>
+            <img src="imagenes/c15.jpg"class="imagen"> <br>
+        </p>
+    </div>
+    <div class="contenido">
+        <h2 class="subtitulo" id="1.2.1.4 Buses">1.2.1.4 Buses</h2>
+        <p class="post">
+            Son canales de comunicación que
+            permiten la transferencia de datos
+            entre diferentes componentes del
+            sistema. <br> Estos componentes
+            pueden ser la CPU, la memoria, los
+            dispositivos de almacenamiento, las
+            tarjetas de expansión, etc. <br><br>
+            <img src="https://i.postimg.cc/W4zXnTcK/b.jpg"class="imagen"> <br>
+            <b>Tipos</b><br><br>
+            <b>Bus de sistema:</b> Es el principal canal de comunicación en una computadora y 
+                                   conecta la CPU con la memoria RAM.<br>
+            <b>Bus del Datos:</b> Facilita la transferencia
+                                  de datos entre la unidad central de procesamiento (CPU), 
+                                  la memoria y otros dispositivos conectados al sistema. <br>
+            <b>Bus de Direcciones:</b> Se utiliza para especificar la ubicación de la memoria 
+                                  o de los registros en la CPU a los que se desea acceder.<br>
+            <b>Bus de control:</b>Se encarga de transmitir
+            señales de control que coordinan y regulan las operaciones dentro del sistema.
+            trabaja en conjunto con los buses de datos y de direcciones para garantizar que las operaciones 
+            se realicen de manera eficiente y en el orden adecuado.<br>
+            <b>Bus de E/S(Entrada/Salida)</b>Es una ruta de comunicación que
+            conecta la CPU con los dispositivos externos, facilitando la entrada y
+            salida de datos en una computadora. <br>
+
+            <img src="imagenes/b1.jpg"class="imagen"> <br>
+        </p>
+    </div>
+
+    <div class="contenido">
+        <h2 class="subtitulo" id=" 1.2.2 Memoria">1.2.2 Memoria </h2>
+        <p class="post">
+            <b>¿Qué es la memoria?</b> <br>
+            En informática, la memoria es el dispositivo que retiene, 
+            memoriza o almacena datos informáticos durante algún periodo de tiempo. 
+            La memoria proporciona una de las principales funciones de la computación moderna: 
+            el almacenamiento de información y conocimiento. Es uno de los componentes fundamentales de la computadora, 
+            que interconectada a la unidad central de procesamiento (CPU) y los dispositivos de entrada/salida, 
+            implementan lo fundamental del modelo de computadora de la arquitectura de Von Neumann.
+            <br>
+            <img src="imagenes/m.jpg"class="imagen"> <br>
+        </p>
+    </div>
+
+    <div class="contenido">
+        <h2 class="subtitulo" id=" 1.2.2.1 conceptos basicos de la memoria">1.2.2.1 Conceptos basicos de la memoria</h2>
+        <p class="post">
+            <b>Gestion de memoria</b> <br>
+            La gestión de memoria en un sistema operativo es una función crucial que controla 
+            y coordina el uso de la memoria de la computadora
+            <br><br>
+            <b>Sistemas de memoria virtual</b> <br>
+            Es una técnica de gestión de la memoria implementada por la mayoría de los sistemas operativos. 
+            Utiliza una combinación de RAM y almacenamiento en disco para dar la ilusión a los usuarios de que 
+            tienen más memoria de la que realmente está disponible. Aunque tiene ventajas, 
+            como permitir ejecutar programas que requieren más memoria de la que el sistema tiene físicamente, 
+            también presenta desventajas, como 
+             el aumento en el tiempo de acceso a la memoria debido a la velocidad más lenta del 
+            disco duro en comparación con la RAM
+            <img src="https://i.postimg.cc/DZqsQM0H/m1.jpg"class="imagen"> <br><br>
+            <b>Administracion de memoria</b> <br>
+            Se refiere a los métodos y operaciones 
+            que gestionan la memoria en un sistema informático. 
+            Su objetivo es asignar y liberar memoria de manera eficiente para los procesos y programas en ejecución.
+            <img src="imagenes/m2.png"class="imagen"> <br>
+            <b>Tecnicas</b> <br>
+                    <b>Partición fija:</b> División de la memoria
+                    libre en varias partes (de igual o distinto
+                    tamaño) 
+                    <br>
+                    
+                    <b> Dinámica:</b> particiones de
+                    la memoria en tamaños que pueden ser variables, 
+                    según la cantidad de memoria que necesita cada proceso.
+            <img src="https://i.postimg.cc/2SD5hShk/m3.webp"class="imagen"> <br>
+           
+        </p>
+    </div>
+    <div class="contenido">
+        <h2 class="subtitulo">1.2.2.2 Memoria principal </h2>
+        <p class="post">
+            <b>¿Qué es?</b> <br>
+            La RAM (Random Access Memory), es aquella donde
+            almacenamos de manera temporal los datos de los
+            programas utilizados en este momento. <br>
+            
+            Existen 2 caracteristicas que la destacan de las demas: <br>
+            Velocidad y los datos solo se almacenan de forma
+            temporal.
+            <br>
+            A mayor RAM mayor velocidad de gestionamiento.
+            <img src="imagenes/m4.jpg"class="imagen"> <br>
+
+            <b>Tipos</b> <br>
+            <b>DDR</b> 
+            Son capaces de llevar a
+            cabo dos operaciones en cada ciclo de reloj.
+            Se activan dos veces en cada ciclo de la señal de
+            reloj, bien por nivel o por flanco.
+            <br><br>
+            
+            <b> SDR:</b> particiones de
+            Solo ejecutan una operacion
+            de lectura o escritura.
+    <img src="imagenes/m5.jpg"class="imagen"> <br>
+<br><br>
+
+    <b>¿Para que sirve?</b> <br>
+    Es la encargada de hacer las tareas de forma más
+inmediata y almacenar las instrucciones de la CPU o los
+datos que las necesitan constantemente.
+
+<br> Los navegadores suelen ocupar mucha memoria RAM al
+igual que las aplicaciones que se queden abiertas.
+        </p>
+    </div>
+    
+    <div class="contenido">
+        <h2 class="subtitulo">1.2.2.3 Memoria Cache </h2>
+        <p class="post">
+            <b>¿Qué es?</b> <br>
+            Es la memoria de acceso rápido de una
+            computadora, que guarda temporalmente las
+            últimas informaciones procesadas. <br>
+            Es un búfer especial de memoria que poseen las
+            computadoras, que funciona de manera similar a la
+            memoria principal, pero es de menor tamaño y de
+            acceso más rápido.
+            <br>
+            <img src="https://i.postimg.cc/nLfqsxcB/m6.jpg"class="imagen"> <br>
+
+            <b>Nivel 1</b>
+            <br>
+            Se encuentra en el núcleo del procesador. Es
+            utilizada para almacenar y acceder a datos e
+            instrucciones importantes y de uso frecuente,
+            agilizando los procesos al ser el nivel que ofrece
+            un tiempo de respuesta menor. <br><br>
+
+            <b>Nivel 2</b>
+            <br>
+            Se encarga de almacenar datos de uso frecuente,
+            es mayor que la caché L1, pero a costa de ser más
+            lenta, aun así es más rápida que la memoria
+            principal (RAM).
+            Puede contener una copia del nivel 1 además de
+            información extra, o exclusiva y que su contenido
+            sea totalmente diferente de la cache L1 <br><br>
+
+            <b>Nivel 3 </b>
+            <br>
+            Es más rápida que la memoria principal (RAM), pero
+            más lenta que L2, ayuda a que el sistema guarde
+            gran cantidad de información agilizando las tareas
+            del procesador.
+            En esta memoria se agiliza el acceso a datos e
+            instrucciones que no fueron localizadas en L1 o L2.
+            Al igual que la L2, puede ser inclusiva y contener
+            una copia de L2 además de información extra.
+
+            <br><br>
+        </p>
+    </div>
+
+    <div class="contenido">
+        <h2 class="subtitulo" id=" 1.2.3 MANEJO de entrada/salida">1.2.3 MANEJO de entrada/salida </h2>
+        <p class="post">
+            Una computadora no puede estar formado sólo por la CPU y la memoria. Para darle alguna utilidad debe de
+            comunicarse con el mundo exterior a través del subsistema de entrada/salida (I/O input/output).
+            <br>
+            <br>
+            <b>Funciones del Sistema de E/S </b>
+            <br><br>
+            1. DIRECCIONAMIENTO: selección del dispositivo
+            correspondiente de entre los
+            dispositivos disponibles en el sistema. <br>
+            
+            2. SINCRONIZACIÓN: ha de posibilitar que la
+            CPU y la memoria se puedan comunicar con
+            los dispositivos de E/S . <br>
+            
+            3. TRANSFERENCIA: el sistema E/S debe de
+            tener toda la circuitería y señales de
+            comunicación apropiadas.
+
+            <br><br>
+            
+        </p>
+    </div>
+    <div class="contenido">
+        <h2 class="subtitulo" id=" 1.2.3.1">1.2.3.1 Modulos de entrada/salida </h2>
+        <p class="post">
+            Los módulos son las interfaces que tiene la
+            computadora con el exterior. Su obetivo es facilitar
+            las operaciones de E/S entre los periféricos y la
+            memoria o los registros del procesador. <br>
+            
+            Un módulo de E/S se conecta con el procesador a
+            través de un bus. Los datos que se transfieren se
+            almacenan temporalmente en un registro de datos.
+            <br>
+            <img src="imagenes/es.png"class="imagen"> <br>
+<br><br>
+<b> Caracteristicas </b>
+            <br><br>
+            Conectar con la CPU y memoria vía bus del
+            sistema. <br><br>
+            Conectar con los periféricos mediante
+            conexiones de datos particularizadas. <br><br>
+            La arquitectura de un E/S se diseña de forma
+            que permita una forma sistemática de controlar
+            las interacciones con el mundo exterior y
+            proprocione al sistema operativo la
+            información que necesita para gestionar la
+actividad de E/S. <br><br>
+<img src="https://i.postimg.cc/rswPvWBV/t1.jpg"class="imagen"> <br>
+<b> Control de transferencia de datos </b>
+            <br><br>
+            1.La CPU pide al módulo E/S del periférico
+            deseado. <br>
+            2. El módulo E/S proporciona el estado. <br>
+            3.Si el periférico está listo, la CPU solicita la
+            transferencia de datos por medio de un
+            comando al módulo E/S. <br>
+            4. El módulo E/S obtiene el dato del periférico. <br>
+            5. El dato se transfiere desde el módulo a la CPU. <br>
+
+  <img src="https://i.postimg.cc/0NZ3Zc4W/t.avif"class="imagen"> <br>
+        </p>
+    </div>
+    <div class="contenido">
+        <h2 class="subtitulo" id=" 1.2.3.2 E/S Programada"> 1.2.3.2 E/S Programada</h2>
+        <p class="post">
+            Con la E/S programable, el módulo
+            realiza la instrucción que le
+            encarga la CPU y coloca los bits
+            correspondientes en el registro de
+            estado.
+            <br>
+            Es responsabilidad de la CPU
+            comprobar periódicamente el
+            estado hasta que se complete la
+            instrucción.
+            <br>
+            <img src="https://i.postimg.cc/fb4XpNGk/es1.jpg"class="imagen"> <br>
+        </p>
+    </div>
+
+    <div class="contenido">
+        <h2 class="subtitulo" id=" 1.2.3.3 E/S por interrupciones"> 1.2.3.3 E/s por interrupciones</h2>
+        <p class="post">
+         
+            Esta técnica pretende evitar que el
+            procesador pare o haga trabajo
+            improductivo, mientras que espera a que el
+            periférico esté preparado para hacer una
+            nueva operación.
+            El hardware de la computadora, necesita
+            tener un conjunto de líneas de control del
+            bus del sistema y de petición de
+            interrupción. <br>
+            <br>
+            <b>Funcionamiento</b> <br>
+            El procesador ejecuta instrucciones de un programa.
+            Al finalizar cada instrucción comprueba si se ha
+            producido una interrupción. <br><br>
+            1.
+            En caso afirmativo se salva el estado actual del
+            programa (contador del programa y registros) y se
+            salta a ejecutar la rutina de servicio
+            correspondiente. <br><br>
+            2.
+            La rutina de servicio efectúa las operaciones
+            apropiadas en la E/S para realizar la transferencia
+            de datos solicitada. <br><br>
+            3.
+            Al finalizar la rutina de servicio se recupera el
+            estado de la CPU y se continúa ejecutando el
+            programa que se estaba ejecutando antes de la
+            interrupción. <br><br>
+
+            <b>Interrupciones</b><br>
+            ENMASCARABLES (se pueden dejar de atender por software) <br><br>
+NO ENMASCARABLES (siempre atendidas) <br><br>
+Dos formas de conocer la
+dirección/posición (vector) donde se
+encuentra la rutina de servicio de la
+interrupción <br><br>
+Vector de interrupciones siempre FIJO ó
+el periférico suministra el vector de
+interrupción <br><br>
+        </p>
+    </div>
+
+    <div class="contenido">
+        <h2 class="subtitulo" id=" 1.2.3.4 Acceso Directo de la memoria"> 1.2.3.4 Acceso Directo de la memoria</h2>
+        <p class="post">
+            Permite que el dispositivo de red transfiera datos directamente a la memoria del sistema, 
+            reduciendo la carga en la CPU. 
+            Sin embargo, debido a la frecuencia y la aleatoriedad de los paquetes, 
+            no siempre permite que el sistema entre en un estado de energía más bajo. <br><br>
+
+            La DMA es utilizada en:
+            Controladores de disco
+            Tarjetas graficas
+            Tarjetas de sonido <br><br>
+
+Es esencial en todo ordenador moderno, ya que permite a
+dispositivos de diferentes velocidades comunicarse sin someter a
+la CPU a una carga masiva de interrupciones. <br>    
+
+Mayor DMA significa mayor energia guardada pero pueden
+aumentar la latencia de red del sistema. <br><br>
+
+Una transferencia DMA coniste principalmente en copiar un
+bloque de memoria de un dispositivo a otro. <br>
+
+Un ejemplo es al mover un bloque de memoria desde una memoria
+externa a una interna mas rapida. <br>
+Puede llevar a problemas de coherencia de caché. Imagine una
+CPU equipada con una memoria caché y una memoria externa
+que se pueda acceder directamente por los dispositivos que
+utilizan DMA.
+
+Cuando la CPU accede a X lugar en la memoria, el valor actual se
+almacena en la caché. Si se realizan operaciones posteriores en
+X, se actualizará la copia en caché de X, pero no la versión de
+memoria externa de X.  <br>Si la caché no se vacía en la memoria
+antes de que otro dispositivo intente acceder a X, el dispositivo
+recibirá un valor caducado de X. <br>
+Del mismo modo, si la copia en caché de X no es invalidada
+cuando un dispositivo escribe un nuevo valor en la memoria,
+entonces la CPU funcionará con un valor caducado de X.
+<img src="https://i.postimg.cc/NfzPyKHV/m7.jpg"class="imagen"> <br>
+  </p>
+    </div>
+
+    <div class="contenido">
+        <h2 class="subtitulo" id="1.2.3.5 Canales y procesadores de entrada/salida">1.2.3.5 Canales y procesadores de entrada/salida</h2>
+        <p class="post">
+            EL canal de E/S es una extensión del bus del 8088. <br>
+            Los canales de E/S proporcionan una línea Ready para
+            permitir operaciones con dispositivos de memoria o de E/S
+            lentos. <br>
+            Los ciclos de reloj se presentan aproximadamente cada 15 m
+            sec y requieren de cinco ciclos de reloj. <br>
+
+            Los dispositivos de E/S están direccionados utilizando un
+            mapeo de E/S con el espacio de direccionamiento. El canal
+            proporciona a las tarjetas de E/S 512 direcciones de
+            dispositivos. <br>
+        </p>
+    </div>    
+
+    
+    <div class="contenido">
+        <h2 class="subtitulo" id="1.2.4 buses">1.2.4 buses</h2>
+        <p class="post">
+            Se refiere a un conjunto de líneas de comunicación que permiten
+            la transferencia de datos entre los diferentes componentes de la
+            computadora. <br>
+            Permiten que el procesador se comunique con la memoria, los
+            dispositivos de almacenamiento, las tarjetas de expansión y otros
+            componentes. <br>
+
+             <h2 class="subtitulo" id="1.2.4.1 Tipos de buses">1.2.4.1 Tipos de buses</h2>
+
+<p class="post">Es una parte fundamental de la comunicación entre los diferentes
+o elementos de un ordenador.
+Es un medio físico por el cuál pueden viajar las señales con la
+información que se tiene que transmitir.
+Hay diferentes tipos de buses:
+
+Método de envío de la información.
+Según las direcciones.
+Según la información que transporten.
+</p>
+
+<p class="post">
+<b>BUSES SEGÚN EL ENVÍO DE INFORMACIÓN</b> <br><br>
+
+<b>Paralelo:</b> Los datos son enviados por bytes
+al mismo tiempo, con la ayuda de
+varias líneas que tienen funciones
+fijas. <br>
+Por ejemplo, si se desea crear un
+bus paralelo para transmitir datos
+de 8 bits, se necesitan 8 líneas
+individuales. <br><br>
+
+<b>En serie:</b> <br><br>
+
+La información se transmite de bit
+a bit, lo que implica que solo se
+necesita una línea de datos.
+
+Es usado en buses para discos
+duros
+  <img src="https://i.postimg.cc/wBg6r4jD/b2.jpg"class="imagen"> <br>
+  <b>BUSES segun las direcciones</b> <br><br>
+ 
+ <b>Unidireccional:</b>
+  Solo permite la
+  transmisión en una
+  dirección o sentido. Se
+  usa, por ejemplo, en un
+  sistema de CPU simple,
+  donde solo se envían
+  direcciones a la
+  memoria. <br><br>
+
+<b>Bidireccional: </b>
+Permite la transmisión
+de datos en una
+dirección u otra, pero no
+ambas al mismo tiempo. <br><br>
+<b>Duplex Completo:</b>
+Se transmiten datos en
+ambos sentido o
+direcciones de manera
+simultánea. Para estas
+transmisiones, se
+requiere el uso de
+múltiples vías
+separadas. <br><br>
+<img src="https://i.postimg.cc/ZR0hkGtv/b3.jpg"class="imagen"> <br>
+
+<b>BUSES SEGÚN la información que transporten</b> <br><br>
+
+<b>Dirección:</b>
+Se encargan de
+indicar la posición de
+memoria o el
+dispositivo con el que
+se desea establecer
+comunicación. 
+<br><br>
+
+
+<b>Control:</b>
+Transportan señales
+de estado de las
+operaciones
+efectuadas por la
+CPU a las demás
+unidades.
+<br><br>
+
+
+<b>Datos:</b>  <br><br>
+Mueve los datos entre
+los dispositivos del
+hardware de entrada,
+de salida y de
+almacenamiento.
+<br><br>
+
+<img src="https://i.postimg.cc/GhPGV2FN/b4.jpg" class="imagen"> <br>
+</p>
+</p>
+</p>
+    </div> 
+    <div class="contenido">
+        <h2 class="subtitulo" id="1.2.4.2 Estructuras de los buses">1.2.4.2 Estructuras de los buses</h2>
+        <p class="post">
+            Un bus es un medio compartido de comunicación constituido por un
+            conjunto de líneas (conductores) que conecta las diferentes unidades de
+            un computador. La principal función de  un bus será, 
+            pues, servir de soporte para la realización de transferencias de información entre dichas unidades. <br>
+
+            La unidad que inicia y controla la transferencia se conoce como
+            master del bus para dicha transferencia, y la unidad sobre la que
+            se realiza la transferencia se conoce como slave. <br>Los papeles de
+            master y slave son dinámicos, de manera que una misma unidad
+            puede realizar ambas funciones en transferencias diferentes. <br>
+            <img src="https://i.postimg.cc/prJrGmwJ/b5.webp" class="imagen"> <br>
+            Por ejemplo, una unidad de DMA hace de slave en la inicialización
+            que realiza el master, la CPU, para una operación de E/S. Sin
+            embargo, cuando comienza la operación, la unidad de DMA juega
+            el papel de master frente a la memoria, que en esta ocasión hace de slave.
+            <br>Para garantizar el acceso ordenado al bus, existe un sistema de
+            arbitraje, centralizado o distribuido, que establece las prioridades
+            cuando dos o más unidades pretenden acceder al mismo tiempo
+            al bus, es decir, garantiza que en cada momento sólo exista un master.
+        </p>
+    </div>
+
+    <div class="contenido">
+        <h2 class="subtitulo" id="1.2.4.3 Jerarquía de buses">1.2.4.3 Jerarquía de buses</h2>
+        <p class="post">
+            Los computadores modernos tienen por lo menos 4 buses
+            diferentes (bus interno, bus del procesador, bus del caché, bus
+            local de E/S, bus estándar de E/S). <br>
+
+            Se les considera una jerarquía, porque cada bus se conecta al
+            nivel superior a él dentro del computador, integrando así todas las
+            partes del computador.
+
+<p class="post">
+<b>Interno:</b>
+Este mueve datos entre
+los componentes internos
+del microprocesador.
+<br><br>
+<b>Procesador:</b>
+El bus del procesador
+es el más rápido
+tratándose de que
+este es el dispositivo
+más rápido del
+computador.
+<br><br>
+
+<b>Cache:</b>
+Un bus de caché es un
+bus de alta velocidad
+dedicado que utiliza un
+procesador de
+computadora para
+comunicarse con su
+memoria caché. <br><br>
+
+<b>Local:</b>
+Alta velocidad
+conecta el procesador
+a la caché sin
+interrumpir el flujo de
+datos. Permite acceso
+rápido a los datos en
+caché y la conexión
+de dispositivos de <br><br>
+
+<b>Estandar:</b>
+Conexión más lenta a través
+de otro adaptador debido a
+las líneas eléctricas que unen las partes del
+microprocesador, formando el
+bus interno por donde circulan
+datos, señales de control y
+direcciones de memoria, que
+en un microprocesador de 32
+bits consta de 32 líneas.
+</p>
+        </p>
+    </div>
+
+    <div class="contenido">
+        <h2 class="subtitulo" id="1.2.5 Interrupciones">1.2.5 Interrupciones</h2>
+        <p class="post">
+            Forma de comunicacion de software y hardware con la CPU.
+            Al escribir en su teclado, el hardware y software respectivos
+            envian interrupciones a la CPU para activar el procesamiento de
+            su entrada. <br>
+            
+            Tambien pueden decirle a la PCU que ocurrio un error, y esto
+            puede causar un aumento en el uso de la CPU, en un sistema
+            saludable, estas se extenderan entre el 0.1% y el 2% del uso de la
+            CPU <br><br>
+
+            Consiste en un mecanismo que le permite al hardware la
+            invocacion de una rutina fuera del control del programa que esta
+            siendo ejecutado. <br>
+
+            Es una supension temporal de la ejecucion de un proceso,para
+            pasar a ejecutar una subrutina de servicio de interrupción, la cual,
+            por lo general, no forma parte del programa, sino que pertenece
+            al sistema operativo o al BIOS. Una vez finalizada dicha subrutina,
+            se reanuda la ejecución del programa. <br>
+            
+            La primera técnica que se empleó para esto fue el polling, que
+            consistía en que el propio procesador se encargara de sondear
+            los dispositivos periféricos cada cierto tiempo para averiguar si
+            tenía pendiente alguna comunicación para él. <br>
+            <img src="imagenes/i.png" class="imagen">
+        </p>
+    </div>
+
+    
+    
+</body>
+</html>
