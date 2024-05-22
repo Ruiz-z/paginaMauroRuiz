@@ -1,0 +1,284 @@
+*{
+    margin: 0;
+    padding: 0;
+    transition: 0.5s;
+    box-sizing: border-box;
+}
+.contenido {
+    max-width: 90%; /* Ancho mÃ¡ximo del contenido */
+    margin: 0 auto; /* Centra el contenido en la pÃ¡gina */
+    padding: 20px; /* Espacio alrededor del contenido */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+.subtitulo {
+    font-size: 2em; /* TamaÃ±o de fuente del subtÃ­tulo */
+    color: black; /* Color del texto */
+    margin-left: 10%;
+}
+.imagen {
+    display: block; /* Muestra la imagen como bloque para ajustar el tamaÃ±o */
+    max-width: 70%; /* Ancho mÃ¡ximo de la imagen */
+    height: auto; /* Altura automÃ¡tica para mantener la proporciÃ³n */
+    margin-top: 20px; /* Espacio superior de la imagen */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body{
+    height: auto;
+    width: 100vw;
+    position: relative;
+    overflow-x: hidden;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    padding: 0 5%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+
+/*Button fixed*/
+
+.chat-button{
+    height: 60px;
+    width: 60px;
+    border-radius: 60px;
+    background: url(Icon.svg);
+    background-color: royalblue;
+    box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.2);
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
+.a{
+    text-decoration:none;
+}
+
+.logo{
+    height: 40%;
+}
+
+.menu-container{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-item{
+    font-family: 'Syncopate', sans-serif;
+    font-size: 12px;
+    margin-left: 2.5em;
+    color: #f2f2f2;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.menu-item:hover{
+    color: royalblue;
+}
+
+.image-container{
+    height: 300px;
+    width: 100%;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(https://i.postimg.cc/3rd9GL9f/2.jpg);
+    background-size: auto 100vw;
+    background-position: top left;
+    animation: bg-movement 40s linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes bg-movement{
+    0%{
+        background-position: top left;
+    }
+    50%{
+        background-position: bottom right;
+    }
+    100%{
+        background-position: top left;
+    }
+}
+
+.page-title{
+    text-transform: uppercase;
+    color: #f2f2f2;
+    font-size: 60px;
+    font-family: 'Syncopate', sans-serif;
+}
+
+.post{
+    font-size: 20px;
+    width: 70%;
+    margin: 5rem auto;
+    line-height: 28px;
+}
+
+/*---------------------------------Unidad3---------------------------------*/
+
+
+
+
+/*Button fixed*/
+
+.chat-button1{
+    height: 60px;
+    width: 60px;
+    border-radius: 60px;
+    background: url(Icon.svg);
+    background-color: royalblue;
+    box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.2);
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
+
+
+.menu-container1{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-item1{
+    font-family: 'Syncopate', sans-serif;
+    font-size: 12px;
+    margin-left: 2.5em;
+    color: #f2f2f2;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.menu-item1:hover{
+    color: royalblue;
+}
+
+.image-container1{
+    height: 300px;
+    width: 100%;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(https://i.postimg.cc/s2db6kH2/3.jpg);
+    background-size: auto 100vw;
+    background-position: top left;
+    animation: bg-movement1 40s linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes bg-movement1{
+    0%{
+        background-position: top left;
+    }
+    50%{
+        background-position: bottom right;
+    }
+    100%{
+        background-position: top left;
+    }
+}
+
+.page-title1{
+    text-transform: uppercase;
+    color: #f2f2f2;
+    font-size: 60px;
+    font-family: 'Syncopate', sans-serif;
+}
+
+.post1{
+    font-size: 20px;
+    width: 70%;
+    margin: 5rem auto;
+    line-height: 28px;
+}
+
+/*----------------------------------------unidad4-------------------------------*/
+.chat-button2{
+    height: 60px;
+    width: 60px;
+    border-radius: 60px;
+    background: url(Icon.svg);
+    background-color: royalblue;
+    box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.2);
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
+
+
+.menu-container2{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-item2{
+    font-family: 'Syncopate', sans-serif;
+    font-size: 12px;
+    margin-left: 2.5em;
+    color: #f2f2f2;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.menu-item2:hover{
+    color: royalblue;
+}
+
+.image-container2{
+    height: 300px;
+    width: 100%;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(https://i.postimg.cc/sgSNhnfC/4.jpg);
+    background-size: auto 100vw;
+    background-position: top left;
+    animation: bg-movement2 40s linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes bg-movement2{
+    0%{
+        background-position: top left;
+    }
+    50%{
+        background-position: bottom right;
+    }
+    100%{
+        background-position: top left;
+    }
+}
+
+.page-title2{
+    text-transform: uppercase;
+    color: #f2f2f2;
+    font-size: 60px;
+    font-family: 'Syncopate', sans-serif;
+}
+
+.post2{
+    font-size: 20px;
+    width: 70%;
+    margin: 5rem auto;
+    line-height: 28px;
+}
