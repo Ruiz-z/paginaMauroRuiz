@@ -143,3 +143,39 @@ body{
     background: #ababab;
     color: #fff;
 }
+
+/*--------------------------------resolucion------------*/
+.resolucion{
+width: 99%;
+text-align: center;
+}
+
+@media  (max_width: 767px){
+.desktop{
+display: none;
+}
+.tablet{
+    display: none;
+}
+
+}
+
+@media  (min_width: 768px) and (max-width:990px){
+    .desktop{
+    display: none;
+    }
+  
+    .movil{
+    display: none;
+    }
+    }
+
+    @media  (min_width: 991px){
+      
+        .tablet{
+            display: none;
+        }
+        .movil{
+    display: none;
+        }
+        }
